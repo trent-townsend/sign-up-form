@@ -1,0 +1,28 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url('./images/bg-intro-mobile.png');
+    background-color: hsl(0, 100%, 74%);
+}
+
+footer {
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
