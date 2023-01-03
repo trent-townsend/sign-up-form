@@ -1,17 +1,75 @@
-html, body {
-    margin: 0;
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+html,
+body {
+  margin: 0;
+  height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./images/bg-intro-mobile.png");
+  background-color: hsl(0, 100%, 74%);
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+main {
     display: flex;
     flex-direction: column;
-    background-image: url('./images/bg-intro-mobile.png');
-    background-color: hsl(0, 100%, 74%);
+    justify-content: center;
+    align-items: center;
+    max-width: 350px;
+}
+
+.intro-text-container {
+    text-align: center;
+    color: white;
+    margin: 5rem 1rem 3rem 1rem;
+}
+
+.intro-text-container h1 {
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+.intro-text-container p {
+    margin-top: 1rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+#trial-banner {
+    color: white;
+    background-color: hsl(248, 32%, 49%);
+    text-align: center;
+    padding: 1rem 4rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 10px hsl(249, 10%, 26%);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.emphasis {
+    font-weight: 600;  
+}
+
+form {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
 }
 
 footer {
@@ -20,7 +78,6 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: auto;
-
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
