@@ -23,12 +23,21 @@
       <div id="trial-banner">
         <span class="emphasis">Try it free 7 days</span> then $20/mo. thereafter
       </div>
-      <form>
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
-        <input type="text" placeholder="Email Address">
-        <input type="password" placeholder="Password">
-        <button class="submit-button">Claim your free trial</button>
+      <form action="" method="post" autocomplete="on">
+        <input type="text" name="first-name" id="first-name" placeholder="First Name" required
+        pattern="^[A-Za-z -,`'.]+$"
+        onchange="try{setCustomValidity('')}catch(e){}""
+        oninvalid="this.setCustomValidity('Can only contain characters A-Z, a-z, spaces and characters ,\'\`.-')">
+        <input type="text" name="last-name" id="last-name" placeholder="Last Name" required
+        pattern="^[A-Za-z -`'.]+$"
+        onchange="try{setCustomValidity('')}catch(e){}""
+        oninvalid="this.setCustomValidity('Can only contain characters A-Z, a-z, spaces and characters ,\'\`.-')">
+        <input type="email" name="email-address" id="email-address" placeholder="Email Address">
+        <input type="password" placeholder="Password" required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+        onchange="try{setCustomValidity('')}catch(e){}"
+        oninvalid="this.setCustomValidity('Must contain at least:\none number (0-9), \none uppercase letter (A-Z), \none lowercase letter (a-z), and be at least 8 or more characters.')">
+        <input type="submit" class="submit-button" value="Claim your free trial">
         <div class="terms-notice">
           By clicking the button, you are agreeing to our <a href="#">Terms and Services</a>
         </div>

@@ -77,7 +77,8 @@ form {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
   padding: 1rem;
   border: 0.5px solid hsl(246, 25%, 77%);
   border-radius: 0.4em;
@@ -119,4 +120,29 @@ footer {
 .attribution a {
   color: hsl(228, 45%, 44%);
   text-decoration: none;
+}
+
+@media (min-width: 900px) {
+  body, html {
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    flex-direction: row;
+    height: 100vh;
+    min-width: 90vw;
+    justify-content: space-evenly;
+  }
+  .intro-text-container {
+    text-align: left;
+    padding: 0 2rem 0 0;
+    max-width: 35%;
+  }
+
+  .sign-up-form-container {
+    min-width: 40%;
+  }
+
+
 }
