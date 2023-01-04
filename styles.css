@@ -94,9 +94,10 @@ input[type="email"] {
   display: relative;
 }
 
-svg {
+.input-field svg {
   position: absolute;
-  right: 10%;
+  right: 3rem;
+
 }
 
 
