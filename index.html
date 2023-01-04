@@ -27,17 +27,15 @@
 
         <div class="input-field">
         <input type="text" name="first-name" id="first-name" placeholder="First Name" required
-          pattern="^[A-Za-z -,`'.]+$" onchange="try{setCustomValidity('')}catch(e){}""
-        oninvalid=" this.setCustomValidity('Can only contain characters A-Z, a-z, spaces and characters ,\'\`.-')">
+        minlength="1" onkeyup="liveCheckValidInput()" 
+          pattern="^[A-Za-z \-,`'.]+">
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g>
           </svg>
           </div>
 
           <div class="input-field">
-        <input type="text" name="last-name" id="last-name" placeholder="Last Name" required pattern="^[A-Za-z -`'.]+$"
-          onchange="try{setCustomValidity('')}catch(e){}""
-        oninvalid=" this.setCustomValidity('Can only contain characters A-Z, a-z, spaces and characters ,\'\`.-')">
+        <input type="text" name="last-name" id="last-name" placeholder="Last Name" required pattern="^[A-Za-z -`'.]+$">
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g>
           </svg>

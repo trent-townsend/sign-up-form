@@ -97,7 +97,11 @@ input[type="email"] {
 .input-field svg {
   position: absolute;
   right: 3rem;
+  display: none;
+}
 
+.input-field .invalid {
+  display: inline;
 }
 
 
