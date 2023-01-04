@@ -1,15 +1,15 @@
 const errorIcon = document.querySelectorAll('.input-field svg')
-const firstName = document.getElementById('first-name');
+const inputs = Array.from(document.querySelectorAll('input'));
 
-console.log(firstName)
-
+console.log(inputs)
 
 function liveCheckValidInput() {
-    console.log(firstName.checkValidity())
-    if (!firstName.checkValidity()) {
-        errorIcon[0].classList.add('invalid');
-    }
-    else if (firstName.checkValidity()) {
-                errorIcon[0].classList.remove('invalid');
-            }
+    for (const input of inputs) {
+        if (!input.checkValidity()) {
+            errorIcon[inputs.indexOf(input)].classList.add('invalid')
         }
+        else if (input.checkValidity()) {
+            errorIcon[inputs.indexOf(input)].classList.remove('invalid')
+        }
+    }
+}

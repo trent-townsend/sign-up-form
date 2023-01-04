@@ -35,14 +35,14 @@
           </div>
 
           <div class="input-field">
-        <input type="text" name="last-name" id="last-name" placeholder="Last Name" required pattern="^[A-Za-z -`'.]+$">
+        <input type="text" name="last-name" id="last-name" placeholder="Last Name" required pattern="^[A-Za-z -`'.]+" onkeyup="liveCheckValidInput()">
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g>
           </svg>
    </div>
 
    <div class="input-field">
-        <input type="email" name="email-address" id="email-address" placeholder="Email Address">
+        <input type="email" name="email-address" id="email-address" placeholder="Email Address" onkeyup="liveCheckValidInput()">
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g>
           </svg>
@@ -51,7 +51,7 @@
    <div class="input-field">
         <input type="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           onchange="try{setCustomValidity('')}catch(e){}"
-          oninvalid="this.setCustomValidity('Must contain at least:\none number (0-9), \none uppercase letter (A-Z), \none lowercase letter (a-z), and be at least 8 or more characters.')">
+          oninvalid="this.setCustomValidity('Must contain at least:\none number (0-9), \none uppercase letter (A-Z), \none lowercase letter (a-z), and be at least 8 or more characters.')" onkeyup="liveCheckValidInput()">
             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
               <g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g>
             </svg>
