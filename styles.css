@@ -74,6 +74,7 @@ form {
   flex-direction: column;
   gap: 1em;
   box-shadow: 0 10px 10px hsl(249, 10%, 26%);
+  position: relative;
 }
 
 input[type="text"],
@@ -83,7 +84,21 @@ input[type="email"] {
   border: 0.5px solid hsl(246, 25%, 77%);
   border-radius: 0.4em;
   font-weight: 700;
+  width: 100%;
 }
+
+.input-field {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  display: relative;
+}
+
+svg {
+  position: absolute;
+  right: 10%;
+}
+
 
 .submit-button {
   background-color: hsl(154, 59%, 51%);
@@ -95,6 +110,10 @@ input[type="email"] {
   border-radius: 0.5em;
   text-transform: uppercase;
   box-shadow: 0 4px hsl(154, 56%, 46%);
+}
+
+.submit-button:hover {
+  background-color: hsl(154, 70%, 63%);
 }
 
 .terms-notice {
@@ -123,7 +142,8 @@ footer {
 }
 
 @media (min-width: 900px) {
-  body, html {
+  body,
+  html {
     justify-content: center;
     align-items: center;
   }
@@ -134,6 +154,11 @@ footer {
     min-width: 90vw;
     justify-content: space-evenly;
   }
+
+  h1 {
+    font-size: 3em !important;
+  }
+
   .intro-text-container {
     text-align: left;
     padding: 0 2rem 0 0;
@@ -143,6 +168,4 @@ footer {
   .sign-up-form-container {
     min-width: 40%;
   }
-
-
 }
