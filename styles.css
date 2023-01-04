@@ -105,7 +105,7 @@ input[type="email"] {
 }
 
 
-.submit-button {
+.submit-btn {
   background-color: hsl(154, 59%, 51%);
   color: white;
   font-weight: 600;
@@ -117,7 +117,7 @@ input[type="email"] {
   box-shadow: 0 4px hsl(154, 56%, 46%);
 }
 
-.submit-button:hover {
+.submit-btn:hover {
   background-color: hsl(154, 70%, 63%);
 }
 
@@ -136,6 +136,7 @@ input[type="email"] {
 
 footer {
   font-size: 11px;
+  padding-top: 2em;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -146,17 +147,19 @@ footer {
   text-decoration: none;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 900px) or (orientation: landscape) {
   body,
   html {
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
   }
 
   main {
     flex-direction: row;
-    height: 100vh;
-    min-width: 90vw;
+    padding-top: 3em;
+    min-height: 100vh;
+    max-width: 90%;
     justify-content: space-evenly;
   }
 
