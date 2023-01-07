@@ -85,6 +85,26 @@ input[type="email"] {
   border-radius: 0.4em;
   font-weight: 700;
   width: 100%;
+  color: hsl(0, 100%, 74%);
+}
+
+.error-text {
+  color: hsl(0, 100%, 74%);
+  font-size: 0.7em;
+  position: absolute;
+  bottom: -2em;
+  right: 0;
+  padding-top: 1em;
+}
+
+.visuallyhidden {
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .input-field {
@@ -92,13 +112,30 @@ input[type="email"] {
   width: 100%;
   align-items: center;
   justify-items: center;
-  display: relative;
+  position: relative;
+  margin-bottom: 1.5em;
+}
+
+
+input::placeholder {
+  color: hsl(0, 100%, 74%);
+}
+
+input:focus {
+  outline: none;
+  border: 0.2em solid hsl(154, 59%, 51%);
+  transition: 0.1s ease all;
+}
+
+input:invalid:focus {
+  border: 0.2em solid  hsl(0, 100%, 74%);
+  transition: 0.1s ease all;
 }
 
 .invalid.input-field:after {
   content:  url(./images/icon-error.svg);
   position: absolute;
-  right: 3rem;
+  right: 1rem;
 }
 
 .submit-btn {

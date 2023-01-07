@@ -23,27 +23,36 @@
       <div id="trial-banner">
         <span class="emphasis">Try it free 7 days</span> then $20/mo. thereafter
       </div>
-      <form action="" method="post" autocomplete="on">
+      <form action="" method="post" autocomplete="on" aria-label="Sign-up form">
 
+        <label for="first-name" class="visuallyhidden">First Name</label>
         <div class="input-field">
         <input type="text" name="first-name" id="first-name" placeholder="First Name" required
         minlength="1" 
-          pattern="^[A-Za-z \-,`'.]+">
+          pattern="^[A-Za-z \-,`'.]+"
+          aria-label="First name">
+          <div class="error-text">First Name cannot be empty</div>
         </div>
 
+        <label for="last-name" class="visuallyhidden">Last Name</label>
         <div class="input-field">
-        <input type="text" name="last-name" id="last-name" placeholder="Last Name" required minlength="1" pattern="^[A-Za-z \-,`'.]+">
+        <input type="text" name="last-name" id="last-name" placeholder="Last Name" required minlength="1" pattern="^[A-Za-z \-,`'.]+" aria-label="Last name">
+        <div class="error-text">Last Name cannot be empty</div>
         </div>
 
+        <label for="email-address" class="visuallyhidden">Email Address</label>
         <div class="input-field">
-        <input type="email" name="email-address" id="email-address" placeholder="Email Address" minlength="1" > 
+        <input type="email" name="email-address" id="email-address" placeholder="Email Address" aria-label="Email Address"> 
+        <div class="error-text">Please enter a valid email</div>
         </div>
 
+        <label for="password" class="visuallyhidden">Password</label>
         <div class="input-field">
-        <input type="password" placeholder="Password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <input type="password" placeholder="Password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" aria-label="Password">
+        <div class="error-text">Password must be at least 8 characters long</div>
        </div>
 
-        <input type="submit" id="submitBtn" class="submit-btn" value="Claim your free trial">
+        <input type="submit" id="submitBtn" class="submit-btn" value="Claim your free trial" aria-label="Submit sign-up form">
         <div class="terms-notice">
           By clicking the button, you are agreeing to our <a href="#">Terms and Services</a>
         </div>
