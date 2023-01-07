@@ -91,19 +91,15 @@ input[type="email"] {
   display: flex;
   width: 100%;
   align-items: center;
+  justify-items: center;
   display: relative;
 }
 
-.input-field svg {
+.invalid.input-field:after {
+  content:  url(./images/icon-error.svg);
   position: absolute;
   right: 3rem;
-  display: none;
 }
-
-.input-field .invalid {
-  display: inline;
-}
-
 
 .submit-btn {
   background-color: hsl(154, 59%, 51%);

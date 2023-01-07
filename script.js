@@ -1,45 +1,21 @@
-const errorIcon = document.querySelectorAll('.input-field svg')
-const inputsFields = document.querySelectorAll('input')
-const submitBtn = document.getElementById("submitBtn")
-const inputsArray = Array.from(document.querySelectorAll('input'));
+const inputFields = document.querySelectorAll(".input-field");
 
-
-submitBtn.addEventListener("click", submitValidation)
-
-inputsFields.forEach(inputField => {
-    inputField.addEventListener('blur', unselectedCheckValidity);
-    inputField.addEventListener('keyup', liveCheckValidInput);
+inputFields.forEach(inputField => {
+    inputField.addEventListener('keyup', liveValidation);
+    inputField.firstElementChild.addEventListener('blur', focusValidation);
 })
 
-//Validate inputs on hitting submission button
-function submitValidation() {
-    event.preventDefault();
-
-    inputsFields.forEach(inputField => {
-        if (!inputField.checkValidity()) {
-            console.log(`Invalid input in ${inputField.id}`)
-        }
-
-    })
-}
-
-//Validate inputs when leaving an input field
-function unselectedCheckValidity() {
-    if (!document.getElementById(event.target.id).checkValidity()){
-        document.querySelector(`#${event.target.id} + svg`).classList.add('invalid')
-    } else if (document.getElementById(event.target.id).checkValidity()){
-        document.querySelector(`#${event.target.id} + svg`).classList.remove('invalid')
+function liveValidation(event) {
+    if (!event.target.checkValidity()) {
+        event.target.parentElement.classList.add("invalid");
+    }
+    else if (event.target.checkValidity()) {
+        event.target.parentElement.classList.remove("invalid");
     }
 }
 
-//Validate inputs live while typing
-function liveCheckValidInput() {
-    for (const input of inputsArray) {
-            if (!input.checkValidity() && document.activeElement.id == input.id) {
-                errorIcon[inputsArray.indexOf(input)].classList.add('invalid')
-            }
-        else if (input.checkValidity() && document.activeElement.id == input.id) {
-            errorIcon[inputsArray.indexOf(input)].classList.remove('invalid')
-        }
+function focusValidation(event) {
+    if(event.target.textLength == 0) {
+        event.target.parentElement.classList.add("invalid");
     }
-} 
+}
