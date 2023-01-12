@@ -20,7 +20,20 @@ function liveValidation(event) {
                 errorText.innerHTML = "First Name cannot be empty";
             }
             else if (event.target.validity.patternMismatch) {
-                errorText.innerHTML = "First Name cannot contain numbers or special characters";
+                let allowedChar = /^[A-Za-z \-,`'.]+/
+                let invalidStr = event.target.value
+                let invalidChars = []
+                for (let i = 0; i < invalidStr.length; i++) {
+                    if (!allowedChar.test(invalidStr[i])) {
+                        invalidChars.push(invalidStr[i]);
+                    }
+                }
+                if (invalidChars.length == 1) {
+                    errorText.innerHTML = `Contains invalid character (${invalidChars.toString()})`;
+                }
+                else {
+                    errorText.innerHTML = `Contains invalid characters (${invalidChars.join(", ")})`;
+                }
             }
         }
 
@@ -29,14 +42,13 @@ function liveValidation(event) {
                 errorText.innerHTML = "Last Name cannot be empty";
             }
             else if (event.target.validity.patternMismatch) {
-                errorText.innerHTML = "Last Name cannot contain numbers or special characters";
+                errorText.innerHTML = " Contains invalid character";
             }
         }
 
         if (targetID == "email-address") {
             errorText.innerHTML = "Please enter a valid email address";
         }
-
 
     }
 
@@ -47,7 +59,10 @@ function liveValidation(event) {
 }
 
 function focusValidation(event) {
+    let errorText = event.target.nextElementSibling
     if (event.target.textLength == 0) {
         event.target.parentElement.classList.add("invalid");
+        errorText.classList.add("invalid")
+        errorText.innerHTML = "Field is required"
     }
 }

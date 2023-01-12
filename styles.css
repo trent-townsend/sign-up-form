@@ -121,7 +121,12 @@ input[type='email']:valid {
   align-items: center;
   justify-items: center;
   position: relative;
+  transition: 0.6s ease all;
+}
+
+.input-field.invalid {
   margin-bottom: 1.5em;
+  transition: 0.6s ease all;
 }
 
 input::placeholder {
@@ -131,12 +136,12 @@ input::placeholder {
 input:focus {
   outline: none;
   border: 0.2em solid hsl(154, 59%, 51%);
-  transition: 0.1s ease all;
+  transition: 0.3s ease all;
 }
 
 input:invalid:focus {
   border: 0.2em solid  hsl(0, 100%, 74%);
-  transition: 0.2s ease all;
+  transition: 0.3s ease all;
 }
 
 .invalid.input-field:after {
