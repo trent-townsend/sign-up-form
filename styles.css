@@ -16,6 +16,11 @@ p {
   margin: 0;
 }
 
+ul, li {
+  margin-top: 0;
+  padding-top: 0;
+  }
+
 body {
   display: flex;
   flex-direction: column;
@@ -127,6 +132,16 @@ input[type='email']:valid {
 .input-field.invalid {
   margin-bottom: 1.5em;
   transition: 0.6s ease all;
+}
+
+.input-field.invalid-large {
+  margin-bottom: 5em;
+  transition: 0.6s ease all;
+}
+
+.error-text.invalid-large {
+  bottom: -15em;
+  margin-bottom: 6em;
 }
 
 input::placeholder {

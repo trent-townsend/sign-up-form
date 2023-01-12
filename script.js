@@ -12,14 +12,19 @@ function liveValidation(event) {
     errorText.innerHTML = "";
 
     if (!event.target.checkValidity()) {
+        if (targetID == "password" && event.target.value.length == 0) {
+            event.target.parentElement.classList.remove("invalid-large");
+            errorText.classList.remove("invalid-large");
+        }
         event.target.parentElement.classList.add("invalid");
         errorText.classList.add("invalid");
 
-        if (targetID == "first-name") {
-            if (event.target.textLength == 0) {
-                errorText.innerHTML = "First Name cannot be empty";
-            }
-            else if (event.target.validity.patternMismatch) {
+        if (event.target.value.length === 0) {
+            errorText.innerHTML = `${event.target.placeholder} cannot be empty`;
+        }
+
+        else {
+            if (targetID == "first-name" || targetID == "last-name" && event.target.validity.patternMismatch) {
                 let allowedChar = /^[A-Za-z \-,`'.]+/
                 let invalidStr = event.target.value
                 let invalidChars = []
@@ -35,25 +40,23 @@ function liveValidation(event) {
                     errorText.innerHTML = `Contains invalid characters (${invalidChars.join(", ")})`;
                 }
             }
-        }
-
-        if (targetID == "last-name") {
-            if (event.target.textLength == 0) {
-                errorText.innerHTML = "Last Name cannot be empty";
-            }
-            else if (event.target.validity.patternMismatch) {
-                errorText.innerHTML = " Contains invalid character";
-            }
-        }
-
-        if (targetID == "email-address") {
+        
+        else if (targetID == "email-address") {
             errorText.innerHTML = "Please enter a valid email address";
         }
 
+        else if (targetID == "password" && event.target.validity.patternMismatch) {
+            event.target.parentElement.classList.add("invalid-large");
+            errorText.classList.add("invalid-large");
+            errorText.innerHTML = "Password must contain at least: <ul><li>8 characters</li><li>one uppercase character</li><li>one number</li><li>one special character</li></ul>"
+        }
+        
     }
-
+    }
     else if (event.target.checkValidity()) {
         event.target.parentElement.classList.remove("invalid");
+        errorText.classList.remove("invalid-large");
+        event.target.parentElement.classList.remove("invalid-large")
         errorText.classList.remove("invalid");
     }
 }
@@ -63,6 +66,6 @@ function focusValidation(event) {
     if (event.target.textLength == 0) {
         event.target.parentElement.classList.add("invalid");
         errorText.classList.add("invalid")
-        errorText.innerHTML = "Field is required"
+        errorText.innerHTML = `${event.target.placeholder} cannot be empty`;
     }
 }
