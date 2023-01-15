@@ -37,12 +37,14 @@ main {
   justify-content: center;
   align-items: center;
   max-width: 350px;
+  position:absolute;
+  top: 0.1rem;
 }
 
 .intro-text-container {
   text-align: center;
   color: white;
-  margin: 5rem 1rem 3rem 1rem;
+  margin: 1rem 1rem 3rem 1rem;
 }
 
 .intro-text-container h1 {
