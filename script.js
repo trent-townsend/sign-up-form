@@ -79,5 +79,5 @@ function showInvalid(invalidField) {
     else if (invalidField.validity.typeMismatch && invalidField.id == 'email-address') {
         errorText.innerText = "Please enter a valid email address"
     }
-   
+
 }
